@@ -25,7 +25,7 @@ const FaqSection = () => {
         </div>
       </div>
       <div className="question">
-        <h2>Who cares?</h2>
+        <h4>Who cares?</h4>
         <div className="answer">
           <p>fuck you, nerd dork ass whatever, working sucks, be cool</p>
         </div>

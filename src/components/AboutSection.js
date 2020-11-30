@@ -1,33 +1,66 @@
 import React from "react";
 import Home1 from "../img/home1.png";
+//import styled
+import styled from "styled-components";
 
 const AboutSection = () => {
   return (
-    <div>
-      <div className="description">
+    <About>
+      <Description>
         <div className="title">
-          <div className="hide">
+          <Hide>
             <h2>We work to make</h2>
-          </div>
-          <div className="hide">
+          </Hide>
+          <Hide>
             <h2>
               Your <span>dreams</span> come{" "}
             </h2>
-          </div>
-          <div className="hide">
+          </Hide>
+          <Hide>
             <h2>true.</h2>
-          </div>
+          </Hide>
         </div>
         <p>
           Contact us for anything fuck you kiss my ass ill figure it out later.
         </p>
         <button>Contact Us</button>
-      </div>
-      <div className="image">
+      </Description>
+      <Image>
         <img src={Home1} alt="Guy with fuck you" />
-      </div>
-    </div>
+      </Image>
+    </About>
   );
 };
+
+//Styled Components
+
+const About = styled.div`
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 10rem;
+  color: white;
+`;
+const Description = styled.div`
+  flex: 1;
+  padding-right: 5rem;
+  h2 {
+    font-weight: lighter;
+  }
+`;
+const Image = styled.div`
+  flex: 1;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+  }
+`;
+
+const Hide = styled.div`
+  overflow: hidden;
+`;
 
 export default AboutSection;
