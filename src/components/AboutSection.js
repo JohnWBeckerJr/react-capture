@@ -14,7 +14,7 @@ const AboutSection = () => {
           </Hide>
           <Hide>
             <h2>
-              balls <span>boobs</span> heck{" "}
+              balls <span>boobs</span> the heck{" "}
             </h2>
           </Hide>
           <Hide>
