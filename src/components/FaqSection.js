@@ -1,41 +1,40 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import { About } from "../styles";
+import Toggle from './Toggle'
+import { AnimateSharedLayout } from "framer-motion"
+import {scrollReveal} from "../animation"
+import {useScroll} from "./useScroll"
 
 const FaqSection = () => {
+  const [element,controls] = useScroll();
   return (
-    <Faq>
+    <Faq variants = {scrollReveal} ref = {element} animate = {controls} initial = "hideen" >
       <h2>
-        Any Questions <span>FAQ</span>
+       <span>FAQ</span>
       </h2>
-      <div className="question">
-        <h4>How do I start?</h4>
+      <AnimateSharedLayout>
+      <Toggle title = "How Do I Start?">
+        <div className="answer">
+          <p>fuck you, nerd dork ass whatever, working sucks, be cool</p>
+      </div>
+      </Toggle>
+      <Toggle title = "Schedule">
+        <div className="answer">
+          <p>fuck you, nerd dork ass whatever, working sucks, be cool</p>
+      </div>
+      </Toggle>
+      <Toggle title = "Payment?">
         <div className="answer">
           <p>fuck you, nerd dork ass whatever, working sucks, be cool</p>
         </div>
-        <div className="faq-line"></div>
-      </div>
-      <div className="question">
-        <h4>Schedule</h4>
+      </Toggle>
+      <Toggle title = "Who cares?">
         <div className="answer">
           <p>fuck you, nerd dork ass whatever, working sucks, be cool</p>
         </div>
-        <div className="faq-line"></div>
-      </div>
-      <div className="question">
-        <h4>Payment?</h4>
-        <div className="answer">
-          <p>fuck you, nerd dork ass whatever, working sucks, be cool</p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
-      <div className="question">
-        <h4>Who cares?</h4>
-        <div className="answer">
-          <p>fuck you, nerd dork ass whatever, working sucks, be cool</p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
+      </Toggle>
+      </AnimateSharedLayout>
     </Faq>
   );
 };
@@ -56,7 +55,7 @@ const Faq = styled(About)`
     width: 100%;
   }
   .question {
-    padding: 3rem 0rem;
+    padding: 2rem 0rem;
     cursor: pointer;
   }
   .answer {
